@@ -62,6 +62,7 @@ function plugin(options = {}){
 						// Need a format in and a result for this to work
 						if (!skip_formatting) {
 							if(result && (ext_format || res_format)){
+								if (ext_format === 'svg') ext_format = 'svg+xml';
 								$img.attr('src', `data:image/${ext_format};base64,${result}`);
 							} else {
 								console.error(`Failed to identify format of ${src}!`);
